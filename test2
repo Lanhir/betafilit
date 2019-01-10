@@ -1,0 +1,66 @@
+typedef struct	s_list
+{
+	int			size;
+	char		**array;
+} t_list;
+
+
+
+#include <stdio.h>
+
+int     biggest_sqrt(int nb)
+{
+    int a;
+    
+    a = 2;
+    while (a * a < nb)
+        a++;
+    return (a);
+}
+
+size_t  lstcount(t_list * list)
+{
+    size_t  a;
+    
+    a = 0;
+    while (list != NULL)
+    {
+        list = list->next;
+        a++;
+    }
+    return (a);
+}
+
+t_list  new_square(int size)
+{
+    t_list  *square;
+    int     a;
+    int     b;
+    
+    square = (t_list *)ft_memalloc(sizeof(t_list));
+    square->size = size;
+    square->array = (char **)ft_memalloc(sizeof(char *) * size);
+    a = 0;
+    while (a < size)
+    {
+        square->array[a] = ft_strnew(size)
+        b = 0;
+        while (b < size)
+        {
+            square->array[a][b] = '.';
+            b++;
+        }
+        a++;
+    }
+    return (square);
+}
+
+t_list  *resolve(t_list *list)
+{
+    t_list  *square;
+    int     size;
+    
+    size = biggest_sqrt(lstcount(list) * 4);
+    square = new_square(size);
+    
+}
